@@ -32,6 +32,7 @@ public class NoteDeleteServlet extends HttpServlet {
             session.remove(note);
             transaction.commit();
             session.close();
+            FactoryProvider.closeFactory();
             resp.sendRedirect("view_notes.jsp");
         }
         catch (Exception e){

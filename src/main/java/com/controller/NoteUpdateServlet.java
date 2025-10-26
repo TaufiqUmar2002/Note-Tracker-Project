@@ -28,6 +28,7 @@ public class NoteUpdateServlet extends HttpServlet {
         note.setAddedate(new Date());
         transaction.commit();
         session.close();
+        FactoryProvider.closeFactory();
         resp.sendRedirect("view_notes.jsp");
     }
 }

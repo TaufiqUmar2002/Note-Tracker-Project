@@ -11,7 +11,7 @@ public class FactoryProvider {
         }
         return factory;
     }
-    public void closeFactory(){
+    public static void closeFactory(){
         if(factory.isOpen()){
             factory.close();
         }

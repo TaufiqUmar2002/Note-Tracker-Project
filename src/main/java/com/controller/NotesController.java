@@ -28,6 +28,7 @@ public class NotesController extends HttpServlet {
             session.persist(note);
             transaction.commit();
             session.close();
+            FactoryProvider.closeFactory();
             resp.setContentType("text/html");
             PrintWriter out = resp.getWriter();
             out.println("<h1 class='text-align:center'>Note is added Successfully</h1>");
